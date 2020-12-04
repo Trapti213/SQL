@@ -1,10 +1,10 @@
 ****************************************
-Example of Rank, Dense Rank, Row Number
+---Example of Rank, Dense Rank, Row Number
 ****************************************
 
-We had a table which used to capture logs of all the events played.
+---We had a table which used to capture logs of all the events played.
 
-Sample Query:
+--Sample Query:
 CREATE TABLE sample1 (player_name varchar(10),status char(15), time TIMESTAMP, score int )
 
 INSERT INTO sample1 values ('Gaurav' ,'completed', '12-4-2020 08:04:01', 10)
@@ -26,10 +26,10 @@ INSERT INTO sample1 values ( 'Aditi','completed', '12-4-2020 08:15:01', 7);
 INSERT INTO sample1 values ('leena','incompleted', '12-4-2020 08:15:01', 9);
 
 ############
-ROW_NUMBER()
+---ROW_NUMBER()
 ############
 
-Q. Find the top 5 earliest game players, who completed the game.
+---Q. Find the top 5 earliest game players, who completed the game.
 
 WITH base as (
         SELECT 
@@ -44,11 +44,11 @@ FROM base
 WHERE row <= 5
 
 
-######
-RANK()
-######
+###########
+---RANK()
+###########
 
-Q.We have only 3 prized to be awarded, to the top 3 winners based on the game_score
+---Q.We have only 3 prized to be awarded, to the top 3 winners based on the game_score
 
 WITH base as (
         SELECT 
@@ -62,12 +62,12 @@ FROM base
 WHERE ranku <= 5
 
 
-############
-DENSE_RANK()
-############
+#################
+---DENSE_RANK()
+#################
 
 
-Q.Top 5 earliest game completions.
+--Q.Top 5 earliest game completions.
 
 WITH base as (
       SELECT 
